@@ -41,6 +41,8 @@ func TestOverlaps(t *testing.T) {
 	r3 := Intrange{3,7}
 	r4 := Intrange{6,9}
 	r5 := Intrange{-5,0}
+	r6 := Intrange{83,91}
+	r7 := Intrange{82,97}
 	if got := r1.Overlaps(r2); got != true {
 		t.Errorf("Contains: r1 should overlap r2")
 	}
@@ -52,5 +54,8 @@ func TestOverlaps(t *testing.T) {
 	}
 	if got := r1.Overlaps(r5); got != false {
 		t.Errorf("Contains: r1 should not overlap r5")
+	}
+	if got := r6.Overlaps(r7); got != true {
+		t.Errorf("Contains: r6 should overlap r7")
 	}
 }
